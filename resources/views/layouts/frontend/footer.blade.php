@@ -70,7 +70,6 @@
             value: 50,
         };
         cardsData.push(additionalCard);
-
         var cardContainer = document.getElementById("cardContainer");
         for (var i = 0; i < cardsData.length; i++)
         {
