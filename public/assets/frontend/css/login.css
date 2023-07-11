@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+}
+.main_wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.main_wrapper .login_card {
+    min-height: 300px;
+    padding: 2rem;
+    background-color: rgb(13, 53, 98);
+    padding: 15px;
+    box-shadow: 0px 5px 10px 0px rgb(0, 0, 0, 0.4);
+    border-radius: 12px;
+    width: 400px;
+    max-width: 400px;
+}
+@media (max-width: 767px) {
+    .main_wrapper  .login_card {
+        width: 300px;
+        max-width: 300px;
+    }
+}
+.login_card .fa-user {
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 0.6rem;
+}
+.login_card h4 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+.login_card .input-group {
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 0px;
+}
+.login_card .input-group-text {
+    border-radius: 6px;
+}
+.login_card .form-control {
+    font-size: 14px;
+    font-family: Roboto;
+    color: rgb(13, 53, 98);
+    font-weight: 500;
+}
+.login_card .form-control:focus {
+    outline: 1px solid rgb(13, 53, 98);
+    box-shadow: none;
+}
+.login_card .form-check label {
+    font-size: 12px;
+    font-family: Roboto;
+    color: #fff;
+}
+
+.login_card .btn {
+    background-color: #fff;
+    color: rgb(13, 53, 98);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.05rem;
+}
+.login_card a {
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.login_card .logo i {
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 0.6rem;
+}

@@ -1,0 +1,176 @@
+$dark: #8f0000;
+$red: #782e35;
+$yellow: #ffd700;
+$bg: #e81e2c;
+
+
+.home {
+    marquee {
+        color: #ffff;
+        background-color: $red;
+        border: 2px solid $bg;
+        border-radius: 2px;
+        padding: 15px 0px 10px;
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+    }
+    .heading {
+        h2 {
+            font-size: 3rem;
+            padding-top: 1rem;
+            font-weight: 700;
+            font-family: "Libre Baskerville", serif;
+            color: #000;
+            text-align: center;
+            text-transform: uppercase;
+            animation: animate 1.5s linear infinite;
+            strong {
+                color: red;
+            }
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+    .ban_img {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+    }
+}
+
+.latest_result {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    div {
+        text-align: center;
+        h2 {
+            font-size: 16px;
+            color: $dark;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 22px;
+            color: $red;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .border_style {
+            border: 5px solid $bg;
+            .number_lottry {
+                background-color: #da401a;
+                display: flex;
+                justify-content: space-around;
+                padding: 2px 12px;
+                // border-radius: 50%;
+                span {
+                    padding: 10px;
+                    font-size: 22px;
+                    font-weight: bold;
+                    color: $dark;
+                    margin: 2px;
+                    background-color: #fff;
+                    padding: 2px 8px;
+                }
+            }
+        }
+        p {
+            margin-top: 15px;
+        }
+    }
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .result_box_card {
+        width: calc(50%);
+        border: 2px solid #000;
+        text-align: center;
+        padding: 16px;
+        div {
+            text-align: center;
+            h2 {
+                font-size: 18px;
+                font-weight: 700;
+                font-family: "Libre Baskerville", serif;
+                color: $dark;
+                margin-bottom: 0px;
+            }
+            p {
+                font-size: 16px;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+            .time {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    font-size: 20px;
+                    font-weight: 700;
+                    font-family: "Libre Baskerville", serif;
+                    padding: 5px;
+                }
+                .new {
+                    color: #e81e2c;
+                }
+            }
+            .view_chart {
+                background-color: #8f0000;
+                color: #fff;
+                border: 2px solid $bg;
+                padding: 5px 10px;
+                margin-top: 5px;
+            }
+            @media (max-width: 767px) {
+                h2 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-bottom: 2px;
+                }
+                .time {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span {
+                        font-size: 14px;
+                        font-weight: 700;
+                        font-family: "Libre Baskerville", serif;
+                        padding: 5px;
+                    }
+                    .new {
+                        color: #e81e2c;
+                    }
+                }
+                .view_chart {
+                    font-size: 12px;
+                    padding: 0px 10px;
+                    margin-top: 1px;
+                }
+            }
+        }
+    }
+}

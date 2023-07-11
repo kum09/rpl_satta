@@ -1,0 +1,50 @@
+.last_month_history {
+    margin-top: 2rem;
+    h2 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    form {
+        margin: 1rem 0rem;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        label {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .form-control {
+            font-size: 14px;
+            font-weight: 400;
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        .btn {
+            margin-bottom: 0;
+            color: #fff;
+            margin-top: 12px;
+            width: 100%;
+            padding: 5px 10px;
+            background-color: rgb(13, 53, 98);
+        }
+    }
+    .table{
+        border-bottom: none;
+        border: #fff;
+        thead{
+            background: rgb(13, 53, 98);
+            color: #fff;
+        }
+        tbody{
+            tr{
+                td{
+                    padding:0.5rem 0.75rem;
+                }
+            }
+        }
+    }
+}

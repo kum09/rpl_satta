@@ -1,0 +1,168 @@
+.header_section {
+    background-color: rgb(102, 159, 224);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 5px 10px 0px rgb(0, 0, 0, 0.3);
+    .navbar-brand {
+        img {
+            width: 120px;
+        }
+    }
+    .desktop_nav {
+        display: block;
+        ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin: 0px 10px;
+                a {
+                    font-size: 16px;
+                    text-decoration: none;
+                    font-family: "Source Sans Pro";
+                    font-weight: 600;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    color: #fff;
+                    &:hover {
+                        color: rgb(15, 53, 98);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.marquee_wrapper {
+    background-color: rgb(15, 53, 98);
+    .head_marquee {
+        padding: 1rem;
+        p {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 0;
+            font-size: 18px;
+            font-family: "Source Sans Pro", sans-serif;
+        }
+    }
+    .satta_banner_heading {
+        h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: "Source Sans Pro", sans-serif;
+            color: red;
+            text-align: center;
+            text-transform: uppercase;
+            animation: animate 1.5s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.phli_news {
+    text-align: center;
+    padding: 2rem 0rem;
+    p {
+        font-size: 1.8rem;
+        font-weight: 600;
+        font-family: "Source Sans Pro";
+        color: rgb(15, 53, 98);
+        margin-bottom: 1.6rem;
+    }
+    .hindi_text {
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(36 166 153);
+        margin-bottom: 1.6rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.6rem;
+        margin-top: 1.6rem;
+        font-weight: 600;
+        font-family: "Source Sans Pro";
+        color: rgb(255, 153, 0);
+    }
+    span {
+        font-size: 2.6rem;
+        font-weight: 500;
+        color: rgb(15, 53, 98);
+    }
+    .waitimg {
+        margin-top: 2rem;
+    }
+}
+
+.octoberresultchart {
+    padding: 20px 0px;
+    color: rgb(15, 53, 98);
+    border-top: 2px solid rgb(102, 159, 224);
+    border-bottom: 1px solid rgb(102, 159, 224);
+    background: #fff;
+}
+
+.newtable {
+    margin-bottom: 2rem;
+    .forfirtcolor {
+        min-width: 80px;
+        font-weight: 700;
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: rgb(15, 53, 98);
+    }
+    table {
+        margin-bottom: 0;
+        tr {
+            td {
+                border: 1px solid #fff;
+                background: red;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.news_letter{
+    margin: 3rem 0rem;
+    background-color:#fff;
+    padding: 30px;
+    border: 2px solid gold;
+    display: flex;
+    justify-content: center;
+    .emai_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            color: #000;
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+    @media(max-width:991px){
+        padding: 15px 8px;
+    }
+}
