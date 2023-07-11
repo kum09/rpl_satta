@@ -68,7 +68,7 @@
             title: "Additional Card",
             time: "(Time: 12:00PM)",
             value: 50,
-        }; 
+        };  
         cardsData.push(additionalCard);
         var cardContainer = document.getElementById("cardContainer");
         for (var i = 0; i < cardsData.length; i++)
