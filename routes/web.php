@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\LoginController;
+use App\Http\Controllers\admin\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.home');
 });
+// admin login starts
+Route::get('admin', [LoginController::class, 'AdminLoginView'])->name('admin.login_view');
+Route::post('admin-login', [LoginController::class, 'AdminLogin'])->name('admin.login');
+// admin login ends
 
+// Admin Dashboard starts
+Route::get('admin/dashboard', [AdminDashboardController::class, 'DashboardView'])->middleware(['auth', 'verified'])->name('admin.dashboard_view');
+// Admin Dashboard ends
 
 
 Route::get('/dashboard', function () {
