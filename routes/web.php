@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\admin\ResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,14 @@ use App\Http\Controllers\admin\AdminDashboardController;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
+
+// home page starts
+Route::get('/', [HomeController::class, 'HomePage'])->name('frontend.home');
+// home page ends
+
 // admin login starts
 Route::get('admin', [LoginController::class, 'AdminLoginView'])->name('admin.login_view');
 Route::post('admin-login', [LoginController::class, 'AdminLogin'])->name('admin.login');
@@ -33,14 +40,19 @@ Route::get('admin/dashboard', [AdminDashboardController::class, 'DashboardView']
 // Admin Dashboard ends
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Result add starts
+    Route::get('admin/result', [ResultController::class, 'index'])->name('admin.result');
+    Route::post('admin/result/store', [ResultController::class, 'store'])->name('admin.result.store');
+    // Result add ends
 });
 
 

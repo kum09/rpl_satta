@@ -27,7 +27,7 @@
                 <li class="active"><a data-toggle="tab" href="adminPanel.html"><i class="fa fa-home fa-lg"></i>
                         Overview</a>
                 </li>
-                <li><a data-toggle="tab" href="resultHisotry.html"><i class="fa fa-tachometer fa-lg"></i>Result
+                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                     </a></li>
                 <li>
                     <a data-toggle="tab" href="profile.html">
@@ -50,7 +50,7 @@
                         Overview</a>
                 </li>
                 <li><a data-toggle="tab" href="#"><i class=" fa fa-clock-o fa-lg"></i> Time</a></li>
-                <li><a data-toggle="tab" href="resultHisotry.html"><i class="fa fa-tachometer fa-lg"></i>Result
+                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                         History</a></li>
                 <li>
                     <a data-toggle="tab" href="profile.html">

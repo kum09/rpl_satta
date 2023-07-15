@@ -38,7 +38,7 @@
         setInterval(updateTime, 1000);
     </script>
 
-    <script>
+    <!-- <script>
         var backgroundColors = ["#cdcdcd", "#fff", "#ffd700"];
         var cardsData = [];
         var startTime = 9;
@@ -90,7 +90,7 @@
     `;
             cardContainer.appendChild(card);
         }
-    </script>
+    </script> -->
 
 
 

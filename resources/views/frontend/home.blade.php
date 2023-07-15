@@ -28,20 +28,59 @@
         <div>
             <h2>Today Latest Result</h2>
             <h3>RPL Lottry Satta</h3>
+            <p>(Time: {{ date('h:i A', strtotime($yesterday_result->result_time)) }})</p>  
             <div class="d-flex justify-content-center">
                 <div class="border_style">
-                    <div class="number_lottry">
-                        <span>X</span>
-                        <span>X</span>
+                    <div class="number_lottry align-items-center">
+                        <span>{{$yesterday_result->result}}</span>
+                        <img src="{{ url('public/assets/frontend/images/new.gif') }}">
+                        <span>{{$today_result->result}}</span>
                     </div>
-                </div>
-
-            </div>
-
-            <!-- <img src="./images/d.gif"> -->
+                </div> 
+            </div>  
             <p>Result out in <strong id="current-time"></strong></p>
         </div>
     </div>
+ 
+        <div class="card-row" id="cardContainer">
+        @php
+           $colorPosition = 0;
+        @endphp
+        @foreach($yesterday_results_list as $index => $result) 
+        @php 
+        $color = array('#cdcdcd', '#fff', '#ffd700'); 
+        @endphp 
+        <div class="result_box_card"
+        @for($i = $colorPosition; $i < 3;)
+             style="background: {{$color[$colorPosition] }}"
+            @break; 
+        @endfor
+        >
+        @php
+        $colorPosition++;
+        @endphp
+        <div>
+            <h2>RPL SATTA</h2> 
+            <p>(Time: {{ date('h:i A', strtotime($result->result_time)) }})</p>  
+            <div class="time">
+                <span id="yesterday">{{$result->result}}</span>
+                <img src="{{ url('public/assets/frontend/images/new.gif') }}">
+                @if(isset($today_results_list[$index]))
+                @if(Carbon\Carbon::now('Asia/Kolkata')->format('H:i:s')  >= $result->result_time)
+                <span id="today" class="new">{{$today_results_list[$index]->result}}</span>
+                @else
+                <span class="new">XX</span>
+                @endif
+                @else
+                <span class="new">XX</span>
+                @endif
+            </div>
+            <button class="view_chart">View Chart</button>
+        </div>
+    </div> 
+    @php if($colorPosition >= 3){ $colorPosition = 0; } @endphp
 
-    <div class="card-row" id="cardContainer"></div>
+    @endforeach
+</div>
+
 @endsection
