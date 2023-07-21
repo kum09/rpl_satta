@@ -11,6 +11,9 @@
      <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.13/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+
 </head>
 
 
@@ -29,8 +32,14 @@
                 </li>
                 <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                     </a></li>
+                    <li> 
+                    <a data-toggle="tab" href="{{route('admin.advertisement.index')}}">
+                        <i class="fa fa-street-view fa-lg"></i>
+                        Advertisement
+                    </a>
+                </li>
                 <li>
-                    <a data-toggle="tab" href="profile.html">
+                    <a data-toggle="tab" href="{{route('admin.profile.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Profile
                     </a>
@@ -52,6 +61,12 @@
                 <li><a data-toggle="tab" href="#"><i class=" fa fa-clock-o fa-lg"></i> Time</a></li>
                 <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                         History</a></li>
+                 <li> 
+                    <a data-toggle="tab" href="">
+                        <i class="fa fa-street-view fa-lg"></i>
+                        Advertisement
+                    </a>
+                </li>
                 <li>
                     <a data-toggle="tab" href="profile.html">
                         <i class="fa fa-street-view fa-lg"></i>

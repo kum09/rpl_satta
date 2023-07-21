@@ -15,6 +15,7 @@ function closeNav()
     document.getElementById("closeBtn").style.display = "none"
 } 
 
+// click Add Result button and make row editable starts
 function makeEditable(time){ 
     var td = document.getElementById(time);
     var input = document.createElement('input');
@@ -25,7 +26,9 @@ function makeEditable(time){
     var button_td = document.getElementById('add_result_btn_'+time);
     button_td.innerHTML = '<button class="btn btn-success" type="button" onclick="UpdateResult(\'' + time + '\')">Update Result</button>';
 }
+// click Add Result button and make row editable ends
 
+// add result starts
 function UpdateResult(time){
       var tr = document.getElementById('table_row_'+time); 
     var value = document.getElementById('result_'+time).value;
@@ -73,3 +76,15 @@ function UpdateResult(time){
     }
     
 }
+// add result ends
+
+
+// make advertisement editable starts
+function makeAdsEditable(){ 
+    $('#mobile_number').removeAttr("disabled")
+    $('#email_id').removeAttr("disabled")
+    $('#edit_btn').hide();
+    $('#update_btn').show(); 
+}
+// make advertisement editable ends
+

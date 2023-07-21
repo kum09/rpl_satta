@@ -8,15 +8,19 @@
                         <div class="row">
                             <div class="col-lg-9">
                                 <div class="row">
+                                    
                                     <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
                                         <div class="card">
                                             <div class="card_head">
-                                                <h2>Admin</h2>
-                                                <p>900</p>
+                                                <h2>RPL</h2>
+                                                <p>A</p>
                                             </div>
+                                            <span>
+                                                <i class="fa-solid fa-clock"></i> 09.20 AM
+                                            </span>
+                                        </div>
+                                    </div>
 
-                                        </div>
-                                    </div>
                                     <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
                                         <div class="card">
                                             <div class="card_head">
@@ -28,6 +32,7 @@
                                             </span>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
                                         <div class="card">
                                             <div class="card_head">
@@ -39,193 +44,22 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
+                                  
+                                  
+                                   
+                                   
+                                   
+                                    
+                                    
+                                   
+                                  
+                                   
+                                  
+                                  
+                                
+                                   
+                                
+                                 
                                 </div>
                             </div>
                             <div class="col-lg-3 mb-3 px-0">

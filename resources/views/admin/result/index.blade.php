@@ -1,8 +1,8 @@
 @extends('layouts/admin/main')
 @section('main-section')
-<div class="content">
+<div class="content"> 
                     <div class="container-fluid last_month_history">
-                        <h2>Monthy Result</h2>
+                        <h2>Monthly Result</h2>
                         <form method="POST" >
                             @csrf
                             <div class="row">
@@ -56,6 +56,9 @@
                             </tbody>
                         </table>
                     </div>
+
+
+                    
                 </div>
 
  @endsection
