@@ -1,65 +1,43 @@
-@extends('layouts/admin/main')
-
+@extends('layouts/admin/main') 
 @section('main-section')
-
+            @php 
+                $todays_date = Carbon\Carbon::now('Asia/Kolkata')->format('Y-m-d');
+                $yesterdays_date = Carbon\Carbon::yesterday('Asia/Kolkata')->format('Y-m-d'); 
+            @endphp
 
                 <div class="content">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-9">
-                                <div class="row">
-                                    
+                                <div class="row"> 
+                                @foreach($time_list as $index => $time) 
+                                @php 
+                                $todays_result = App\Models\admin\Result::whereDate('date', $todays_date)->where('result_time', $time->result_declare_time)->first();
+                                @endphp
                                     <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
                                         <div class="card">
                                             <div class="card_head">
                                                 <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
+                                                @if(Carbon\Carbon::now('Asia/Kolkata')->format('H:i:s')  >= $time->result_declare_time)
+                                                <p>
+                                                {{$todays_result->result ?? 'XX'}}
+                                                </p>
+                                                @else
+                                                <p>
+                                                XX 
+                                                </p>
+                                                @endif
 
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
+                                                 
                                             </div>
                                             <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
+                                                <i class="fa-solid fa-clock"></i> {{ date('h:i A', strtotime($time->result_declare_time)) }}
                                             </span>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-3 col-md-3 col-sm-4 mb-4">
-                                        <div class="card">
-                                            <div class="card_head">
-                                                <h2>RPL</h2>
-                                                <p>A</p>
-                                            </div>
-                                            <span>
-                                                <i class="fa-solid fa-clock"></i> 09.20 AM
-                                            </span>
-                                        </div>
-                                    </div>
-                                  
-                                  
-                                   
-                                   
-                                   
-                                    
+                                @endforeach
                                     
                                    
-                                  
-                                   
-                                  
-                                  
-                                
-                                   
-                                
-                                 
                                 </div>
                             </div>
                             <div class="col-lg-3 mb-3 px-0">
@@ -76,90 +54,18 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="selecttime" class="form-label">Date</label>
-                                            <select class="form-control" id="selecttime" aria-label="selecttime">
-                                                <option selected>24-04-2023</option>
-                                                <option value="1">28-04-2023</option>
-                                                <option value="2">29-04-2023</option>
-                                                <option value="3">30-04-2023</option>
-                                            </select>
+                                            <input class="form-control" type="date" name="filter_date_dashboard" id="filter_date_dashboard">
+                                            
                                         </div>
                                     </form>
                                     <div class="result_list">
-                                        <ul>
-                                            <li>
-                                                Time
-                                            </li>
-                                            <li>
-                                                12.15 PM
-                                            </li>
-                                            <li>
-                                                12.25 PM
-                                            </li>
-                                            <li>
-                                                12.40 PM
-                                            </li>
-                                            <li>
-                                                01.15 PM
-                                            </li>
-                                            <li>
-                                                01.25 PM
-                                            </li>
-                                            <li>
-                                                01.40 PM
-                                            </li>
-                                            <li>
-                                                02.15 PM
-                                            </li>
-                                            <li>
-                                                02.35 PM
-                                            </li>
-                                            <li>
-                                                03.00 PM
-                                            </li>
-                                            <li>
-                                                03.15 PM
-                                            </li>
-                                            <li>
-                                                03.30 PM
-                                            </li>
+                                        <ul id="filter_result_time">
+                                             
+                                             
                                         </ul>
-                                        <ul>
-                                            <li>
-                                                Number
-                                            </li>
-                                            <li>
-                                                46
-                                            </li>
-                                            <li>
-                                                24
-                                            </li>
-                                            <li>
-                                                4
-                                            </li>
-                                            <li>
-                                                44
-                                            </li>
-                                            <li>
-                                                64
-                                            </li>
-                                            <li>
-                                                20
-                                            </li>
-                                            <li>
-                                                92
-                                            </li>
-                                            <li>
-                                                88
-                                            </li>
-                                            <li>
-                                                72
-                                            </li>
-                                            <li>
-                                                57
-                                            </li>
-                                            <li>
-                                                16
-                                            </li>
+                                        <ul id="filter_result_result">
+                                          
+                                            
                                         </ul>
                                     </div>
                                 </div>
