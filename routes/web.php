@@ -78,6 +78,10 @@ Route::middleware('auth')->group(function () {
     // admin profile page start
     Route::get('admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile.index');
     // admin profile page ends
+
+    // dashboard filter with date using ajax request starts 
+    Route::get('admin/dashboard-filter-request', [AdminDashboardController::class, 'DashboardFilterRequest'])->name('admin.dashboard_filter_request');
+    // dashboard filter with date using ajax request ends
 });
 
 

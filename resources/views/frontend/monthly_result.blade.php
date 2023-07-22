@@ -102,8 +102,8 @@
                 </thead>
                 <tbody class="colorchange">
                     <tr> 
-                        <td class="text-center forfirtcolor" style="background:{{$th_bg_color}};">
-                        {{date('d-m-Y'), strtotime($todays_date2)}}
+                        <td class="text-center forfirtcolor" style="background:{{$th_bg_color}};"> 
+                        {{ date('d-m-Y', strtotime($todays_date2)) }}
                         </td> 
                         @foreach ($all_result_time as $index => $time)
                         @if($index >9)
@@ -157,7 +157,7 @@
                 <tbody class="colorchange">
                     <tr>
                     <td class="text-center forfirtcolor" style="background:{{$th_bg_color}}; color:{{$th_text_color}};">
-                    {{date('d-m-Y'), strtotime($todays_date2)}}
+                    {{ date('d-m-Y', strtotime($todays_date2)) }}
                         </td>
                         
                         @foreach ($all_result_time as $index => $time)
@@ -211,7 +211,7 @@
                 <tbody class="colorchange">
                     <tr>
                     <td class="text-center forfirtcolor" style="background:{{$th_bg_color}}; color:{{$th_text_color}};">
-                    {{date('d-m-Y'), strtotime($todays_date2)}}
+                    {{ date('d-m-Y', strtotime($todays_date2)) }}
                         </td>
                         
                         @foreach ($all_result_time as $index => $time)
@@ -267,7 +267,7 @@
                 <tbody class="colorchange">
                     <tr>
                     <td class="text-center forfirtcolor" style="background:{{$th_bg_color}}; color:{{$th_text_color}};">
-                    {{date('d-m-Y'), strtotime($todays_date2)}}
+                    {{ date('d-m-Y', strtotime($todays_date2)) }}
                         </td> 
                         
                         @foreach ($all_result_time as $index => $time)
