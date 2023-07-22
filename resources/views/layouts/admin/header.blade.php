@@ -14,6 +14,54 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
 
+    <style>
+        .log_out_button{
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 576px){
+            .right .header ul li{
+                padding-left:0px;
+            }
+            .log_out_button{
+                display:none;
+            }
+            .right .header{
+                padding:15px;
+            }
+            .user_name_font{
+                font-size: 0.9rem;
+            }
+            
+        }
+        .sideNavleft ul .menu-heading .closeBtn{
+        cursor: pointer !important;
+    }
+
+    .navbar_icon_style{
+        cursor: pointer;
+    }
+    
+      
+    .sideNavleft ul button {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 10px 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    width: 200px;
+    border-bottom: 1px solid #4d44b5;
+    
+}
+.sideNavleft ul button p{
+    padding-left: 27px;
+}
+
+
+    </style>
+
 </head>
 
 
@@ -28,7 +76,7 @@
                     </h3>
                 </li>
                 <li class="active"><a data-toggle="tab" href="adminPanel.html"><i class="fa fa-home fa-lg"></i>
-                        Overview</a>
+                Dashboard</a>
                 </li>
                 <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                     </a></li>
@@ -56,13 +104,12 @@
                     <span class="closeBtn" id="closeBtn" onclick="closeNav()">X</span>
                 </li>
                 <li class="active"><a data-toggle="tab" href="adminPanel.html"><i class="fa fa-home fa-lg"></i>
-                        Overview</a>
+                        Dashboard</a>
                 </li>
-                <li><a data-toggle="tab" href="#"><i class=" fa fa-clock-o fa-lg"></i> Time</a></li>
-                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
-                        History</a></li>
-                 <li> 
-                    <a data-toggle="tab" href="">
+                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class=" fa fa-clock-o fa-lg"></i> Result</a></li>
+                
+                 <li class="log_out_mobile_btn"> 
+                    <a data-toggle="tab" href="{{route('admin.advertisement.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Advertisement
                     </a>
@@ -73,34 +120,42 @@
                         Profile
                     </a>
                 </li>
-                <li><a data-toggle="tab" href="#"><i class="fa fa-line-chart fa-lg"></i> Setting</a></li>
-                <li><a data-toggle="tab" href="#"><i class="fa fa-search fa-lg"></i> Browse</a></li>
+               
+                <li><form method="POST" action="{{route('logout')}}">
+                            @csrf
+                     <button type="submit" value="Log Out" ><i class="fa fa-sign-out fa-lg"></i>
+                     <p>Log out</p></button>
+                </form>
+            </li>
+               
+
             </ul>
         </div>
         <div class="right">
             <div class="tab-content">
                 <div class="header">
                     <h4>Dashboard</h4>
-                    <ul class="pull-right">
+                    <ul class="pull-right ">
                         <li>
+                        <li class="user_name_font" >{{Auth::user()->name}}</li>
                             <div class="btn-group dropleft dropdown-user">
                                 <img class="dropdown-toggle" style="width:40px;height: 40px;"
-                                    src="{{url('public/assets/admin/img/bellcoloricon.png')}}" data-toggle="dropdown" aria-haspopup="true"
+                                    src="{{url('public/assets/frontend/images')}}/bellcoloricon.png" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                 </img>
                             </div>
                         </li>
                         <li>
                             <span class="toggleOpenNav" onclick="openSideNav()">
-                                <i class="fa-solid fa-bars"></i>
+                                <i class="fa-solid fa-bars navbar_icon_style"></i>
                             </span>
                         </li>
-                        <li>{{Auth::user()->name}}</li>
                         <li><form method="POST" action="{{route('logout')}}">
                             @csrf
-                     <input type="submit" value="Log Out">
+                     <input type="submit" value="Log Out" class="log_out_button">
                 </form>
             </li>
+                      
 
                     </ul>
                 </div>

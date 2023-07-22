@@ -8,6 +8,7 @@ use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\admin\ResultController;
 use App\Http\Controllers\admin\AdvertisementController; 
 use App\Http\Controllers\admin\AdminProfileController; 
+use App\Http\Controllers\frontend\ForgetPasswordController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::get('/monthly-result-b', [HomeController::class, 'MonthlyResult'])->name(
 Route::get('/monthly-result-c', [HomeController::class, 'MonthlyResult'])->name('frontend.monthly_result_c');
 Route::get('/monthly-result-d', [HomeController::class, 'MonthlyResult'])->name('frontend.monthly_result_d');
 
+//forget password start
+Route::get('/forget-password', [ForgetPasswordController::class, 'index'])->name('frontend.forget_password.index');
+//forget password ends
 
 
 // admin login starts
@@ -78,6 +82,7 @@ Route::middleware('auth')->group(function () {
     // admin profile page start
     Route::get('admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile.index');
     // admin profile page ends
+
 });
 
 

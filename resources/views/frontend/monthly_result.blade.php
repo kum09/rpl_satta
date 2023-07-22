@@ -48,6 +48,22 @@
         }  
     @endphp
 
+    <style>
+        .form_styling{
+            display:flex;
+            justify-content: center;
+        
+            
+        }
+        .date_button_style{
+            width: 130px;
+            margin-right: 10px;
+         }
+        
+
+
+        </style>
+
 <section class="marquee_wrapper" style="background:{{$top_heading_bg_color}};">
         <div class="satta_banner_heading">
             <h2 style="color:{{$top_heading_text_color}};">
@@ -66,8 +82,10 @@
             <p class="hindi_text" style="color:{{$hindi_text_color}};">!! हाँ  भाई यहीं  आती हे सबसे पहले खबर रूको और देखो !!</p>
             <h2>RPL SATTA</h2> 
             <form method="GET" action="{{url($monthely_url)}}?result_date={{$todays_date2}}">
-            <input type="date" name="result_date" value="{{isset($_GET['result_date']) && $_GET['result_date'] ? $_GET['result_date'] : $current_date}}" max="{{$current_date}}">
-            <input type="submit" value="Submit">
+                <div class="form_styling">
+            <input class="form-control date_button_style" type="date" name="result_date" value="{{isset($_GET['result_date']) && $_GET['result_date'] ? $_GET['result_date'] : $current_date}}" max="{{$current_date}}">
+            <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
         </div>
     </section>
    
