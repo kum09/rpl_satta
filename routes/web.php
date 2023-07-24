@@ -82,6 +82,7 @@ Route::middleware('auth')->group(function () {
     // admin profile page start
     Route::get('admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile.index');
     // admin profile page ends
+
 });
 
 
