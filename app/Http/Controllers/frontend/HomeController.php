@@ -23,8 +23,6 @@ class HomeController extends Controller
             $last_result_time = Resulttime::select('result_declare_time')->where('result_declare_time', '22:00:00')->orderBy('result_declare_time', 'desc')->first();
          }
 
-
-        
         // $today_results_list = Result::whereDate('date', $currentDate)->get();
         // $yesterday_results_list = Result::whereDate('date', $yesterdayDate)->get();
         // $yesterday_result = Result::whereDate('date', $yesterdayDate)->where('result_time', '<=', $currentTime)->orderBy('result_time', 'desc')->first();

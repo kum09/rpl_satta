@@ -47,7 +47,7 @@
                 <button type="submit" class="btn">
                     Sign In
                 </button>
-                <a href="#">
+                <a href="{{route('frontend.forget_password.index')}}">
                     Forget password?
                 </a>
 
