@@ -24,6 +24,7 @@ class LoginController extends Controller
     public function AdminLogin(LoginRequest $request){
         $request->authenticate();
         $request->session()->regenerate();
+        
         return redirect('admin/dashboard');
     }
 // admin login request function after login redirect on dashboard starts

@@ -78,35 +78,14 @@
                                                 <div class="col-sm-6 mb-3">
                                                     <div class="form-group">
                                                         <label for="firstname" class="form-label">
-                                                            First Name*
+                                                            Full Name*
                                                         </label>
-                                                        <input type="text" value="Rahul" class="form-control" disabled
+                                                        <input type="text" value="{{Auth::user()->name}}" class="form-control" disabled
                                                             id="firstname">
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6 mb-3">
-                                                    <div class="form-group">
-                                                        <label for="lastname" class="form-label">
-                                                            Last Name*
-                                                        </label>
-                                                        <input type="text" value="Yadav" class="form-control" disabled
-                                                            id="lastname">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3">
-                                                    <label for="dob" class="form-label">
-                                                        Date & Place of Birth *
-                                                    </label>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <input type="text" value="04-june-1998, Gurgoan"
-                                                                    class="form-control" disabled id="dob">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
+                                                
+                                             
                                               
 
                                                 <div class="col-sm-6 mb-3">
@@ -114,29 +93,20 @@
                                                         <label for="email" class="form-label">
                                                             Email *
                                                         </label>
-                                                        <input type="text" value="rahul@gmail.com" class="form-control"
+                                                        <input type="text" value="{{Auth::user()->email}}" class="form-control"
                                                             disabled id="email">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-6 mb-3">
                                                     <div class="form-group">
-                                                        <label for="phone_no" class="form-label">
-                                                            Phone *
+                                                        <label for="password" class="form-label">
+                                                            Password *
                                                         </label>
-                                                        <input type="text" value="905XXXXX12" class="form-control"
-                                                            disabled id="phone_no">
+                                                        <input type="text" value="********" class="form-control"
+                                                            disabled id="password">
                                                     </div>
-                                                </div>
-
-                                                <div class="col-sm-6 mb-3">
-                                                    <div class="form-group">
-                                                        <label for="address" class="form-label">Address *</label>
-                                                        <input class="form-control" type="text" disabled id="address"
-                                                            value="Sushant-lok, New-delhi, 122002"></input>
-                                                    </div>
-                                                </div>
-
+                                                </div> 
                                             </div>
                                         </div>
                                     </div>
