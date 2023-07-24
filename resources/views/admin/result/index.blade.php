@@ -1,5 +1,10 @@
 @extends('layouts/admin/main')
 @section('main-section')
+
+<style>
+   
+</style>
+
 <div class="content"> 
                     <div class="container-fluid last_month_history">
                         <h2>Monthly Result</h2>
@@ -27,7 +32,7 @@
                                     <th scope="col">Date</th>
                                     <th scope="col">Year</th>
                                     <th scope="col">Number</th>
-                                    <th class="float-lg-right" scope="col">Action</th>
+                                    <th scope="col" class="text-right">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +56,11 @@
                                         <td id="{{ date('H:i:s', $time) }}">{{ $res ? $res['result'] : 'XX' }}</td>
                                         <td class="float-lg-right" id="add_result_btn_{{ date('H:i:s', $time) }}">
                                             <button class="btn btn-success" type="button" {{ $res ? 'disabled' : '' }} onclick="makeEditable('{{ date('H:i:s', $time) }}')">{{ $res ? 'Updated' : 'Add Result' }}</button>
+                                            <button class="btn btn-success" type="button"  onclick="makeEditable('{{ date('H:i:s', $time) }}')"> <i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                           
+
                                         </td>
+                                        
                                     </tr>
                                 @endfor
                             </tbody>

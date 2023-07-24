@@ -41,6 +41,7 @@
     padding: 10px;
 }
 
+
 @media screen and (max-width: 991px) {
     .profile_card img {
         border-radius: 80px;
