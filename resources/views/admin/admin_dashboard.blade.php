@@ -61,7 +61,6 @@
                                     <div class="result_list">
                                         <ul id="filter_result_time">
                                              
-                                             
                                         </ul>
                                         <ul id="filter_result_result">
                                           
