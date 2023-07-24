@@ -1,6 +1,17 @@
 @extends('layouts/admin/main')
 @section('main-section')
 
+
+<style>
+    .last_month_history .table {
+    border-bottom: none;
+    border: #fff;
+    min-width: 500px;
+    overflow: scroll;
+}
+</style>
+
+
 <div class="content"> 
                     <div class="container-fluid last_month_history">
                         <h2>Avertisement</h2>

@@ -388,7 +388,10 @@ hr {
 .last_month_history .table {
   border-bottom: none;
   border: #fff;
+  min-width: 380px;
+  overflow: scroll;
 }
+
 .last_month_history .table thead {
   background: rgb(13, 53, 98);
   color: #fff;
