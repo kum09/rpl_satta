@@ -75,6 +75,9 @@
                     <div class="number_lottry align-items-center" style="font-size: 40px; font-weight: bold; background: red; color: #fff;"> 
                         @php
                         $todays_last_result = App\Models\admin\Result::whereDate('date', $todays_date)->where('result_time', $last_result_time->result_declare_time)->first();
+                        if(empty($todays_last_result) || $todays_last_result == ''){
+                            $todays_last_result = App\Models\admin\Result::whereDate('date', $yesterdays_date)->where('result_time', $last_result_time->result_declare_time)->first();
+                        }
                         @endphp 
                         <span>{{$todays_last_result->result ?? 'XX'}}</span>
                     </div>

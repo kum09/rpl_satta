@@ -18,7 +18,12 @@ class HomeController extends Controller
       
         $time_list = ResultTime::get();
         $advertisement_list = Advertisement::where('id', 1)->first();
-        $last_result_time = Resulttime::where('result_declare_time', '<=', $currentTime)->orderBy('result_declare_time', 'desc')->first();
+        $last_result_time = Resulttime::select('result_declare_time')->where('result_declare_time', '<=', $currentTime)->orderBy('result_declare_time', 'desc')->first();
+         if(empty($last_result_time) || $last_result_time == ''){
+            $last_result_time = Resulttime::select('result_declare_time')->where('result_declare_time', '22:00:00')->orderBy('result_declare_time', 'desc')->first();
+         }
+
+
         
         // $today_results_list = Result::whereDate('date', $currentDate)->get();
         // $yesterday_results_list = Result::whereDate('date', $yesterdayDate)->get();
