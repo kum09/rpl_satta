@@ -76,8 +76,7 @@ function UpdateResult(time){
     }
     
 }
-// add result ends
-
+// add result ends 
 
 // make advertisement editable starts
 function makeAdsEditable(){ 
@@ -87,4 +86,38 @@ function makeAdsEditable(){
     $('#update_btn').show(); 
 }
 // make advertisement editable ends
+
+
+
+// date filter on admin dashboard starts
+var filter_date = document.getElementById('filter_date_dashboard');
+filter_date.addEventListener("change", function (){
+    var date_value = filter_date.value;
+    $.ajax({
+        url:'dashboard-filter-request',
+        data:{date_value: date_value},
+        type:'GET',
+        success:function(response){ 
+          
+            var append_to_html_time= "<li>Time</li>";
+            var append_to_html_result= "<li>Number</li>";
+           response.forEach(function (item){
+             var timeParts = item.result_time.split(":");
+            var hours = parseInt(timeParts[0]);
+            var minutes = timeParts[1];
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Handle 0 as 12 AM
+            var formattedTime = hours + ':' + minutes + ' ' + ampm;
+
+            append_to_html_time = append_to_html_time + '<li>'+formattedTime+'</li>';
+            append_to_html_result = append_to_html_result + '<li>'+item.result+'</li>';
+           });
+           $('#filter_result_time').html(append_to_html_time)
+           $('#filter_result_result').html(append_to_html_result)
+        },
+    }); 
+});
+// date filter on admin dashboard ends
+
 

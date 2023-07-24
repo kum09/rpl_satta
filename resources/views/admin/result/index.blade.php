@@ -3,7 +3,7 @@
 <div class="content"> 
                     <div class="container-fluid last_month_history">
                         <h2>Monthly Result</h2>
-                        <form method="POST" >
+                        <!-- <form method="POST" >
                             @csrf
                             <div class="row">
                                 <div class="col-md-3">
@@ -19,10 +19,10 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
                         <table id="myTable" class="table table-responsive-md table-hover">
                             <thead>
-                                <tr>
+                                <tr> 
                                     <th scope="col">Time</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Year</th>
@@ -35,6 +35,7 @@
                                     $startTime = strtotime('09:00:00');
                                     $endTime = strtotime('22:00:00');
                                     $interval = 20 * 60; // 20 minutes in seconds
+                                    $current_date = Carbon\Carbon::now('Asia/Kolkata')->format('Y-m-d');
                                 @endphp
                                 
                                 @for ($time = $startTime; $time <= $endTime; $time += $interval)
