@@ -99,12 +99,14 @@
   
       <div class="forget_form">
         <!-- Step 1: Email Input -->
-        <form method="POST" id="forgotPasswordForm">
+        <div id="forgotPasswordForm">
           <input type="email" id="email" required class="form-control email_form_style" placeholder="Enter email">
+          <div id="emailError" class="error-message" style="display: none; color: red;"></div> <!-- New error div -->
+          <div id="loader" style="display: none;">Sending OTP Please Wait...</div>
           <div class="forget_pass_btn">
             <button class="btn btn-info forget_pass_btn_col" id="nextStepBtn" type="button">Send OTP</button>
           </div>
-        </form>
+</div>
   
         <!-- Step 2: OTP Input (Hidden by default) -->
        
@@ -118,13 +120,17 @@
         <input type="text" maxlength="1" class="form-control otp-field" required>
         <input type="text" maxlength="1" class="form-control otp-field" required>
       </div>
+
       <button class="btn btn-info forget_pass_btn_col" id="verifyOtpBtn" type="button">Reset Password</button>
       </div>
 
       <!-- Step 3: New Password Input (Hidden by default) -->
       <div id="step3" style="display: none;">
+      <div id="otpVerifyed" class="otp-verifyed-message" style="display: none; color: green;"></div> <!-- New error div -->
+
         <input type="password" id="newPassword" required class="form-control" placeholder="Enter new password">
         <input type="password" id="confirmPassword" required class="form-control" placeholder="Confirm new password">
+         
         <div class="forget_pass_btn">
           <button class="btn btn-info forget_pass_btn_col" id="resetPasswordBtn" type="button">Reset Password</button>
         </div>
@@ -133,7 +139,7 @@
       <!-- Step 4: Success Message (Hidden by default) -->
       <div id="step4" style="display: none;" class="text-center">
         <p>Password reset successfully!</p>
-        <button class="btn btn-info forget_pass_btn_col" id="button" type="button">Go to Log In Page</button>
+        <a href="{{route('admin.login_view')}}" class="btn btn-info forget_pass_btn_col"  type="button">Go to Log In Page</a>
       </div>
       
       </div>
@@ -142,9 +148,7 @@
   
 
   <!-- Link to Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
   <script>
   document.getElementById("nextStepBtn").addEventListener("click", function () {
@@ -154,55 +158,85 @@
       alert("Please enter your email!");
       return;
     }
+  // Show the loader before making the AJAX request
+  document.getElementById("loader").style.display = "block";
+  document.getElementById("emailError").style.display = "none"; 
 
-    // Hide Step 1 and show Step 2
-    document.getElementById("forgotPasswordForm").style.display = "none";
-    document.getElementById("step2").style.display = "block";
+    $.ajax({
+      url:'check_email',
+      type:'GET',
+      data:{email: email},
+      success:function(response){
+        if(response.email_status == 'email_not_exist'){
+          // Show the error message
+          document.getElementById("loader").style.display = "none";
+        document.getElementById("emailError").innerHTML = "Email does not exist!";
+        document.getElementById("emailError").style.display = "block"; 
+        }else{
+          localStorage.setItem('email', email);
+          document.getElementById("emailError").style.display = "none"; 
+           // Hide Step 1 and show Step 2
+        document.getElementById("forgotPasswordForm").style.display = "none";
+        document.getElementById("step2").style.display = "block";
+        }
+      },
+    });
+
   });
 
   document.getElementById("verifyOtpBtn").addEventListener("click", function () {
     const enteredOTP = Array.from(otpInputs)
       .map((input) => input.value)
       .join("");
-
-    // Assuming you have a function for OTP verification on the server-side
-    // For demonstration, let's assume the OTP is "123456"
-    if (enteredOTP !== "123456") {
-      alert("Invalid OTP, please try again!");
-      return;
-    }
-
-    // If the OTP is verified successfully, proceed to the next step
-    document.getElementById("step2").style.display = "none";
-    document.getElementById("step3").style.display = "block";
+  
+    var email = localStorage.getItem('email');
+      $.ajax({
+        url:'check_otp',
+        type:'GET',
+        data:{email: email},
+        success(response){
+          if(enteredOTP == response.otp){ 
+            document.getElementById("otpVerifyed").innerHTML = "OTP verification success please enter new password";
+            document.getElementById("otpVerifyed").style.display = "block"; 
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step3").style.display = "block";
+          }else if (enteredOTP !== response.otp) {
+            alert("Invalid OTP, please try again!");
+            return;
+        }
+        },
+      });
+   
   });
 
   document.getElementById("resetPasswordBtn").addEventListener("click", function () {
     var newPassword = document.getElementById("newPassword").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
-
+    var email = localStorage.getItem('email');
     if (newPassword.trim() === "") {
       alert("Please enter a new password!");
       return;
-    }
-
-    if (confirmPassword.trim() === "") {
+    }else if (confirmPassword.trim() === "") {
       alert("Please confirm your new password!");
       return;
-    }
-
-    if (newPassword !== confirmPassword) {
+    }else if (newPassword !== confirmPassword) {
       alert("Passwords do not match!");
       return;
+    }else{
+      $.ajax({
+        url:'update_password',
+        type:'GET',
+        data:{password:newPassword, email:email},
+        success:function(response){
+          if(response.password_status == 'updated'){
+        document.getElementById("step3").style.display = "none";
+        document.getElementById("step4").style.display = "block";
+          }
+        },
+      });
     }
 
-    // Assuming you have a function for password reset on the server-side
-    // For demonstration, let's assume the password reset is successful
-    // You can handle the password update and verification on the server-side securely
-    // and display an error message if anything goes wrong
-    // For now, we'll just show a success message on the final step
-    document.getElementById("step3").style.display = "none";
-    document.getElementById("step4").style.display = "block";
+ 
   });
 </script>
 
@@ -231,7 +265,10 @@
     });
   });
 </script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
 
 </body>

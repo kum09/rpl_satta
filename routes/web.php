@@ -44,6 +44,9 @@ Route::get('/monthly-result-d', [HomeController::class, 'MonthlyResult'])->name(
 
 //forget password start
 Route::get('/forget-password', [ForgetPasswordController::class, 'index'])->name('frontend.forget_password.index');
+Route::get('check_email', [ForgetPasswordController::class, 'CheckEmail'])->name('frontend.forget_password.check_email');
+Route::get('check_otp', [ForgetPasswordController::class, 'CheckOtp'])->name('frontend.forget_password.check_otp');
+Route::get('update_password', [ForgetPasswordController::class, 'UpdatePassword'])->name('frontend.update_password');
 //forget password ends
 
 
