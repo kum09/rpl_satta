@@ -63,10 +63,10 @@
                                     <h2>
                                         Profile Details
                                     </h2>
-                                    <button class="btn" type="button" id="edit_button" data-bs-toggle="modal"
+                                    <!-- <button class="btn" type="button" id="edit_button" data-bs-toggle="modal"
                                         data-bs-target="#staticBackdrop">
                                         <i class="fa-solid fa-pen-to-square"></i> Edit
-                                    </button>
+                                    </button> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 text-center">
