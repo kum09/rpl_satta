@@ -6,10 +6,10 @@
   <title>Forgot Password</title>
   <!-- Link to Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-</head>
+ </head>
 <style>
 .main_wrapper{
         height: 100vh;
@@ -148,14 +148,25 @@
   
 
   <!-- Link to Bootstrap JS and jQuery -->
+<<<<<<< Updated upstream
 
+=======
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+>>>>>>> Stashed changes
 
   <script>
   document.getElementById("nextStepBtn").addEventListener("click", function () {
     var email = document.getElementById("email").value;
 
     if (email.trim() === "") {
-      alert("Please enter your email!");
+      Swal.fire(
+      'Oops....',
+      'Please enter Email Id',
+      'error'
+    ); 
       return;
     }
   // Show the loader before making the AJAX request

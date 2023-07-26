@@ -19,13 +19,31 @@ class ResultController extends Controller
         $time = $request->input('time');
         $date = $request->input('date');
         $result = $request->input('result');
-        $res = Result::create([
+        $searchAttributes = [
+            'date' => $date,
+            'result_time' => $time,
+        ];
+        $updateAttributes = [
             'date' => $date,
             'result_time' => $time,
             'result' => $result,
             'result_status' => '1',
             'updated_by' => '1'
-        ]); 
+        ];
+
+      
+
+        $res = Result::updateOrCreate($searchAttributes, $updateAttributes);
+
+        // $res = Result::create([
+        //     'date' => $date,
+        //     'result_time' => $time,
+        //     'result' => $result,
+        //     'result_status' => '1',
+        //     'updated_by' => '1'
+        // ]); 
+
+
         if($res){
             return response()->json(['status' => 'success', 'result' => $result]);
         }else{

@@ -65,7 +65,7 @@ function UpdateResult(time){
                 if(response.status == 'success'){
                     td.innerHTML = response.result;
                     tr.style.backgroundColor  = "#daffda";
-                    button_td.innerHTML = '<button class="btn btn-success" type="button" disabled>Updated</button>';
+                    button_td.innerHTML = '<button class="btn btn-success" type="button" onclick="makeEditable(\'' + time + '\')">Edit</button>';
 
                 }else{
                     error.innerHTML = "Something Went Wrong";

@@ -55,8 +55,11 @@
                                       
                                         <td id="{{ date('H:i:s', $time) }}">{{ $res ? $res['result'] : 'XX' }}</td>
                                         <td class="float-lg-right" id="add_result_btn_{{ date('H:i:s', $time) }}">
-                                            <button class="btn btn-success" type="button" {{ $res ? 'disabled' : '' }} onclick="makeEditable('{{ date('H:i:s', $time) }}')">{{ $res ? 'Updated' : 'Add Result' }}</button>
-                                            <button class="btn btn-success" type="button"  onclick="makeEditable('{{ date('H:i:s', $time) }}')"> <i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                            @if($res != '')
+                                            <button class="btn btn-success" type="button"  onclick="makeEditable('{{ date('H:i:s', $time) }}')">Edit</button>
+                                            @else
+                                            <button class="btn btn-success" type="button" onclick="makeEditable('{{ date('H:i:s', $time) }}')">Add Result</button>
+                                            @endif
                                            
 
                                         </td>
