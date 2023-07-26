@@ -24,9 +24,10 @@ class ForgetPasswordController extends Controller
             $otp = random_int(100000, 999999); // Generates a cryptographically secure random number between 100000 and 999999
             $update_otp = User::where('email', $email)->update(['otp' => $otp]);
             $mailData = [
-                'title' => 'Forget password OTP from RPL SATTA',
-                'body' => 'This is you OTP to forget password '. $otp,
-            ];
+              'title' => 'Forget Password OTP From RPL SATTA',
+              'body' => 'This is your OTP to forget password !',
+              'otp' => $otp
+          ];
             Mail::to($email_exist_or_not->email)->send(new ForgetPassword($mailData));
             return response()->json(['email_status'=> 'otp_sent']);
          }

@@ -148,14 +148,11 @@
   
 
   <!-- Link to Bootstrap JS and jQuery -->
-<<<<<<< Updated upstream
 
-=======
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
->>>>>>> Stashed changes
 
   <script>
   document.getElementById("nextStepBtn").addEventListener("click", function () {
@@ -212,7 +209,11 @@
             document.getElementById("step2").style.display = "none";
             document.getElementById("step3").style.display = "block";
           }else if (enteredOTP !== response.otp) {
-            alert("Invalid OTP, please try again!");
+            Swal.fire(
+            'Oops....',
+            'Please enter valid OTP',
+            'error'
+          ); 
             return;
         }
         },
@@ -225,13 +226,25 @@
     var confirmPassword = document.getElementById("confirmPassword").value;
     var email = localStorage.getItem('email');
     if (newPassword.trim() === "") {
-      alert("Please enter a new password!");
+          Swal.fire(
+      'Oops....',
+      'Please enter a new Password',
+      'error'
+    ); 
       return;
     }else if (confirmPassword.trim() === "") {
-      alert("Please confirm your new password!");
+            Swal.fire(
+        'Oops....',
+        'Please confirm your new Password',
+        'error'
+      ); 
       return;
     }else if (newPassword !== confirmPassword) {
-      alert("Passwords do not match!");
+      Swal.fire(
+      'Oops....',
+      'Password does not match',
+      'error'
+    ); 
       return;
     }else{
       $.ajax({
