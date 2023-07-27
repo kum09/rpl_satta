@@ -73,20 +73,21 @@
                 <li class="menu-heading my-0">
                     <h3>
                         RPL
-                    </h3>
+                        
+                    </h3> 
                 </li>
-                <li class="active"><a data-toggle="tab" href="adminPanel.html"><i class="fa fa-home fa-lg"></i>
+                <li class="{{Request::route()->getName() == 'admin.dashboard_view' ? 'active':''}}"><a data-toggle="tab" href="{{route('admin.dashboard_view')}}"><i class="fa fa-home fa-lg"></i>
                 Dashboard</a>
                 </li>
-                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
+                <li class="{{Request::route()->getName() == 'admin.result' ? 'active':''}}"><a data-toggle="tab" href="{{route('admin.result')}}"><i class="fa fa-tachometer fa-lg"></i>Result
                     </a></li>
-                    <li> 
+                    <li class="{{Request::route()->getName() == 'admin.advertisement.index' ? 'active':''}}"> 
                     <a data-toggle="tab" href="{{route('admin.advertisement.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Advertisement
                     </a>
                 </li>
-                <li>
+                <li class="{{Request::route()->getName() == 'admin.profile.index' ? 'active':''}}">
                     <a data-toggle="tab" href="{{route('admin.profile.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Profile
@@ -103,19 +104,19 @@
                     </h3>
                     <span class="closeBtn" id="closeBtn" onclick="closeNav()">X</span>
                 </li>
-                <li class="active"><a data-toggle="tab" href="adminPanel.html"><i class="fa fa-home fa-lg"></i>
+                <li class="{{Request::route()->getName() == 'admin.dashboard_view' ? 'active':''}}"><a data-toggle="tab" href="{{route('admin.dashboard_view')}}"><i class="fa fa-home fa-lg"></i>
                         Dashboard</a>
                 </li>
-                <li><a data-toggle="tab" href="{{route('admin.result')}}"><i class=" fa fa-clock-o fa-lg"></i> Result</a></li>
+                <li class="{{Request::route()->getName() == 'admin.result' ? 'active':''}}"><a data-toggle="tab" href="{{route('admin.result')}}"><i class=" fa fa-clock-o fa-lg"></i> Result</a></li>
                 
-                 <li class="log_out_mobile_btn"> 
+                 <li class="log_out_mobile_btn {{Request::route()->getName() == 'admin.advertisement.index' ? 'active':''}}"> 
                     <a data-toggle="tab" href="{{route('admin.advertisement.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Advertisement
                     </a>
                 </li>
-                <li>
-                    <a data-toggle="tab" href="profile.html">
+                <li class="{{Request::route()->getName() == 'admin.profile.index' ? 'active':''}}">
+                    <a data-toggle="tab" href="{{route('admin.profile.index')}}">
                         <i class="fa fa-street-view fa-lg"></i>
                         Profile
                     </a>
