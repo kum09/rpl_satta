@@ -51,4 +51,6 @@ class LoginMail extends Mailable
     {
         return [];
     }
+
+    
 }

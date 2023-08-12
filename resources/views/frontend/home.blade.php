@@ -61,6 +61,7 @@
 @php 
     $todays_date = Carbon\Carbon::now('Asia/Kolkata')->format('Y-m-d');
     $yesterdays_date = Carbon\Carbon::yesterday('Asia/Kolkata')->format('Y-m-d'); 
+    $current_time = Carbon\Carbon::now('Asia/Kolkata')->format('H:i:s');
 @endphp
 
     <div class="latest_result">
@@ -68,15 +69,18 @@
             <h2>Today Latest Result</h2>
             <h3>RPL Lottry Satta</h3>
             <p>(Time: {{ date('h:i A', strtotime($last_result_time->result_declare_time)) ?? "" }})</p>  
-            <p id="last_resutl_time" style="display:none;">{{$last_result_time->result_declare_time}}</p>
+            <p id="last_resutl_time" style="display:none;">{{$last_result_time->result_declare_time}}</p> 
             <div class="d-flex justify-content-center">
                 <div>
                 <center><img src="{{url('public/assets/frontend/images/down.gif')}}"></center>
                     <div class="number_lottry align-items-center" style="font-size: 40px; font-weight: bold; background: red; color: #fff;"> 
-                        @php
+                        <?php
+                       if($current_time >= '22:00:00' && $current_time <= '23:50:00'){
                         $todays_last_result = App\Models\admin\Result::whereDate('date', $todays_date)->where('result_time', $last_result_time->result_declare_time)->first();
-                       
-                        @endphp 
+                       }elseif($current_time >= '09:00:00' && $current_time < '22:00:00'){
+                        $todays_last_result = App\Models\admin\Result::whereDate('date', $todays_date)->where('result_time', $last_result_time->result_declare_time)->first();
+                       }
+                        ?>
                         <span>{{$todays_last_result->result ?? 'XX'}}</span>
                     </div>
                     <center><img src="{{url('public/assets/frontend/images/new2.gif')}}" width="30%"></center>
